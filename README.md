@@ -31,7 +31,54 @@ We use this categorical data encoding technique when the features are nominal(do
 • Yeojohnson method
 
 # CODING AND OUTPUT:
-       # INCLUDE YOUR CODING AND OUTPUT SCREENSHOTS HERE
+```
+import pandas as pd
+df=pd.read_csv("/content/Encoding Data.csv")
+df
+```
+<img width="366" height="461" alt="image" src="https://github.com/user-attachments/assets/6e40bdd2-49ef-4dfc-9179-e7443a00e80d" />
+
+```
+from sklearn.preprocessing import LabelEncoder,OrdinalEncoder
+pm=['Hot','Warm','Cold']
+e1=OrdinalEncoder(categories=[pm])
+e1.fit_transform(df[["ord_2"]])
+```
+<img width="322" height="292" alt="image" src="https://github.com/user-attachments/assets/c9a76210-5cfd-4259-b715-4c31e9f51a03" />
+```
+df['bo2']=e1.fit_transform(df[["ord_2"]])
+df
+```
+<img width="307" height="356" alt="image" src="https://github.com/user-attachments/assets/8afdd417-c1b1-4c1d-84af-b9f488e4f236" />
+
+```
+le=LabelEncoder()
+dfc=df.copy()
+dfc['ord_2']=le.fit_transform(dfc['ord_2'])
+dfc
+```
+<img width="312" height="351" alt="image" src="https://github.com/user-attachments/assets/4d80ff77-7120-4217-9180-c2d6ee57b4a7" />
+```
+from sklearn.preprocessing import OneHotEncoder
+ohe = OneHotEncoder(sparse_output=False)
+df2=df.copy()
+enc=pd.DataFrame(ohe.fit_transform(df2[['nom_0']]))
+df2=pd.concat([df2,enc], axis=1)
+df2
+```
+<img width="417" height="352" alt="image" src="https://github.com/user-attachments/assets/c6c17e4d-f3d4-410b-adf0-97333351e337" />
+
+```
+pd.get_dummies (df2,columns=["nom_0"])
+```
+<img width="637" height="357" alt="image" src="https://github.com/user-attachments/assets/3a5c9925-9865-4719-8b95-e25e7fbc1917" />
+
+```
+df=pd.read_csv("/content/data.csv")
+df
+```
+<img width="462" height="358" alt="image" src="https://github.com/user-attachments/assets/11a79b68-96ac-491d-94d1-f26b95858909" />
+
 # RESULT:
        # INCLUDE YOUR RESULT HERE
 
