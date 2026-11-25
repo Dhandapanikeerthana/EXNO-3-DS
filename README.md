@@ -4,31 +4,49 @@
 To read the given data and perform Feature Encoding and Transformation process and save the data to a file.
 
 # ALGORITHM:
-STEP 1:Read the given Data.
-STEP 2:Clean the Data Set using Data Cleaning Process.
-STEP 3:Apply Feature Encoding for the feature in the data set.
-STEP 4:Apply Feature Transformation for the feature in the data set.
-STEP 5:Save the data to the file.
+
+STEP 1. Read the given dataset using Pandas.
+
+STEP 2. Clean the dataset by handling missing values and unnecessary data.
+
+STEP 3. Apply Feature Encoding techniques such as Ordinal Encoding, Label Encoding, Binary Encoding, One-Hot Encoding and Target Encoding to convert categorical data into          numerical values.
+
+STEP 4. Apply Feature Transformation techniques such as Log, Reciprocal, Square Root and Square Transformation to reduce data skewness.
+
+STEP 5. Apply Power Transformation techniques such as Box-Cox and Yeo-Johnson to make the data distribution more normal.
+
+STEP 6. Use Quantile Transformation and Q-Q plots to analyse the transformed data distribution.
+
+STEP 7. Save the processed dataset into a CSV file.
 
 # FEATURE ENCODING:
+
 1. Ordinal Encoding
 An ordinal encoding involves mapping each unique label to an integer value. This type of encoding is really only appropriate if there is a known relationship between the categories. This relationship does exist for some of the variables in our dataset, and ideally, this should be harnessed when preparing the data.
+
 2. Label Encoding
 Label encoding is a simple and straight forward approach. This converts each value in a categorical column into a numerical value. Each value in a categorical column is called Label.
+
 3. Binary Encoding
 Binary encoding converts a category into binary digits. Each binary digit creates one feature column. If there are n unique categories, then binary encoding results in the only log(base 2)ⁿ features.
+
 4. One Hot Encoding
 We use this categorical data encoding technique when the features are nominal(do not have any order). In one hot encoding, for each level of a categorical feature, we create a new variable. Each category is mapped with a binary variable containing either 0 or 1. Here, 0 represents the absence, and 1 represents the presence of that category.
 
 # Methods Used for Data Transformation:
+  
   # 1. FUNCTION TRANSFORMATION
 • Log Transformation
+
 • Reciprocal Transformation
+
 • Square Root Transformation
+
 • Square Transformation
 
 # 2. POWER TRANSFORMATION
 • Boxcox method
+
 • Yeojohnson method
 
 # CODING AND OUTPUT:
@@ -242,6 +260,33 @@ plt.show()
 <img width="558" height="428" alt="image" src="https://github.com/user-attachments/assets/f76fe2fe-24db-43d0-a384-0418d19af72d" />
 
 # RESULT:
+ Thus, Feature Encoding and Feature Transformation were successfully performed on the given dataset to convert categorical values into numerical values and reduce data       skewness
       
+## SUMMARY:
 
+In this experiment, we used Pandas, NumPy, Scikit-learn, SciPy, Seaborn, Matplotlib and Statsmodels to perform Feature Encoding and Feature Transformation.
+
+1. Pandas: Used read_csv() to read the dataset, copy() to create a copy, concat() to combine columns and skew() to identify the skewness of numerical data.
+
+2. Ordinal Encoding: Used OrdinalEncoder() to convert ordered categorical values such as Hot, Warm and Cold into numerical values (0, 1, 2).
+
+3. Label Encoding: Used LabelEncoder() to convert categorical labels into numerical values.
+
+4. One-Hot Encoding: Used OneHotEncoder() and get_dummies() to create separate binary columns for each category.
+
+5. Binary Encoding: Used BinaryEncoder() to convert categorical values into binary digits, reducing the number of columns compared to One-Hot Encoding.
+
+6. Target Encoding: Used TargetEncoder() to replace categorical values with numerical values based on the target variable.
+
+7. Function Transformation: Used NumPy functions such as log(), reciprocal(), sqrt() and square() to transform numerical values and reduce or modify skewness.
+
+8. Power Transformation: Used boxcox() and yeojohnson() from SciPy to reduce skewness and make the data distribution more normal.
+
+9. Quantile Transformation: Used QuantileTransformer() to transform the data into a normal distribution.
+
+10. Q-Q Plot: Used qqplot() from Statsmodels with Matplotlib to visually check whether the transformed data follows a normal distribution.
+
+11. Data Visualization: Used Seaborn and Matplotlib for data visualization.
+
+Feature Encoding converts categorical data into numerical data, while Feature Transformation changes numerical data distribution to reduce skewness and make it suitable for machine learning algorithms.
        
