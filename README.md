@@ -138,36 +138,43 @@ df
 <img width="655" height="490" alt="image" src="https://github.com/user-attachments/assets/408412f3-d091-4480-9b3b-d51dda222f61" />
 
 ```
+
 df.skew()
 ```
-<img width="332" height="205" alt="image" src="https://github.com/user-
-attachments/assets/e06a85ab-a4f2-4f0f-bf23-1b43c594df8a" />
+<img width="332" height="205" alt="image" src="https://github.com/user-attachments/assets/e06a85ab-a4f2-4f0f-bf23-1b43c594df8a" />
 
 ```
 np.log(df["Highly Positive Skew"])
+
 ```
-<img width="273" height="520" alt="image" src="https://github.com/user-
-attachments/assets/497c99c3-f292-4bf0-bde3-3552a8f87a9f" />
+
+<img width="273" height="520" alt="image" src="https://github.com/user-attachments/assets/497c99c3-f292-4bf0-bde3-3552a8f87a9f" />
 
 ```
 np.reciprocal(df["Moderate Positive Skew"])
+
 ```
+
 <img width="348" height="523" alt="image" src="https://github.com/user-attachments/assets/e2683a60-e0c4-4328-948a-99da52159c74" />
 
 ```
 np.sqrt(df["Highly Positive Skew"])
+
 ```
 
 <img width="287" height="513" alt="image" src="https://github.com/user-attachments/assets/9f78f68f-c667-42d7-a729-613c33dfe6d9" />
 
 ```
 np.square(df["Highly Positive Skew"])
+
 ```
+
 <img width="301" height="520" alt="image" src="https://github.com/user-attachments/assets/ceef693b-44a8-4232-ad91-747b9a2dd551" />
 
 ```
 df["Highly Positive Skew_boxcox"], parameters=stats.boxcox(df["Highly Positive Skew"]) 
 df
+
 ```
 
 <img width="1137" height="490" alt="image" src="https://github.com/user-attachments/assets/70ee8b93-d108-417b-b89f-5dd751e13032" />
@@ -175,6 +182,7 @@ df
 ```
 df["Moderate Negative Skew_yeojohnson"],parameters=stats.yeojohnson(df["Moderate Negative Skew"]) 
 df.skew()
+
 ```
 
 <img width="440" height="303" alt="image" src="https://github.com/user-attachments/assets/8f937a5e-badf-430e-8cd3-58197cf7a381" />
@@ -185,10 +193,10 @@ from sklearn.preprocessing import QuantileTransformer
 qt=QuantileTransformer(output_distribution='normal') 
 df["Moderate Negative Skew_1"]=qt.fit_transform(df[["Moderate Negative Skew"]]) 
 df
+
 ```
 
-<img width="1701" height="427" alt="image" src="https://github.com/user-
-attachments/assets/6c39d3c6-ed1b-4b76-953d-b537a11aec82" />
+<img width="1701" height="427" alt="image" src="https://github.com/user-attachments/assets/6c39d3c6-ed1b-4b76-953d-b537a11aec82" />
 
 ```
 import seaborn as sns 
@@ -196,14 +204,15 @@ import statsmodels.api as sm
 import matplotlib.pyplot as plt 
 sm.qqplot(df["Moderate Negative Skew"],line='45') 
 plt.show()
+
 ```
 
-<img width="577" height="435" alt="image" src="https://github.com/user-attachments/assets/6c4b8648-
-c058-4414-9dc9-a0d8cd8de43d" />
+<img width="577" height="435" alt="image" src="https://github.com/user-attachments/assets/6c4b8648-c058-4414-9dc9-a0d8cd8de43d" />
 
 ```
 sm.qqplot(np.reciprocal(df["Moderate Negative Skew"]),line='45') 
 plt.show()
+
 ```
 <img width="572" height="425" alt="image" src="https://github.com/user-attachments/assets/c046c326-2c7b-4b90-81c3-d79956f8957b" />
 
@@ -212,14 +221,15 @@ from sklearn.preprocessing import QuantileTransformer
 df["Moderate Negative Skew"]=qt.fit_transform(df[["Moderate Negative Skew"]])
 sm.qqplot(df["Moderate Negative Skew"],line='45') 
 plt.show()
+
 ```
-<img width="563" height="432" alt="image" src="https://github.com/user-attachments/assets/c0b2830d-
-5c8a-4b48-a7ee-81eba3d55aa5" />
+<img width="563" height="432" alt="image" src="https://github.com/user-attachments/assets/c0b2830d-5c8a-4b48-a7ee-81eba3d55aa5" />
 
 ```
 df["Highly Negative Skew_1"]=qt.fit_transform(df[["Highly Negative Skew"]])
 sm.qqplot(df['Highly Negative Skew'], line='45')
 plt.show()
+
 ```
 
 <img width="563" height="431" alt="image" src="https://github.com/user-attachments/assets/b86160c4-6894-494a-830a-e5f81f1ee472" />
@@ -227,10 +237,11 @@ plt.show()
 ```
 sm.qqplot(df['Highly Negative Skew_1'], line='45')
 plt.show()
+
 ```
 <img width="558" height="428" alt="image" src="https://github.com/user-attachments/assets/f76fe2fe-24db-43d0-a384-0418d19af72d" />
 
 # RESULT:
-       # INCLUDE YOUR RESULT HERE
+      
 
        
